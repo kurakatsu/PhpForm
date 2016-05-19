@@ -4,7 +4,6 @@ echo "性別： ". $_POST["rdo"]. "<br>";
 echo "電話番号: ". $_POST["num1"]. "-". $_POST["num2"]. "-". $_POST["num3"]. "<br>";
 echo "メールアドレス:". $_POST["mail_1"]. "@". $_POST["mail_2"]. "<br>";
 echo "どこで知りましたか？<br>";
-$checkbox = array("雑誌","Web","友人","その他");
 foreach($_POST["chk"] as $value){
     echo $value. ",";
 }
