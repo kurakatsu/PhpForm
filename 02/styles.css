@@ -1,4 +1,16 @@
 #page {
     margin: 0 auto;
-    width: 700px;
+    width: 532px;
+}
+td {
+    border: solid;
+}
+tbody {
+    width: 900px;
+    margin: 900px;
+}
+body {
+    border: solid;
+}
+form {
 }
