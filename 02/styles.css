@@ -1,16 +1,36 @@
 #page {
     margin: 0 auto;
-    width: 532px;
+    width: 662px;
 }
 td {
     border: solid;
+    padding: 20px;
+    width: 170px;
 }
 tbody {
     width: 900px;
-    margin: 900px;
-}
-body {
-    border: solid;
 }
 form {
+}
+table {
+    border: solid 1px #000000;
+    border-collapse: collapse;
+}
+textarea {
+    resize: none;
+}
+p {
+    padding-top: 10px;
+    margin: 0 auto;
+    width: 125px;
+}
+input#submit_btn {
+    width: 125px;
+    height: 50px;
+    font-size: 1.5em;
+    border: none;
+    border-radius: 5px;
+}
+#submit_btn {
+    width: 632px;
 }
