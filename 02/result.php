@@ -11,18 +11,25 @@
             <h2>
                 <ul>
                     <li><?php
-                        echo "お名前： ". $_POST["name1"]. " ". $_POST["name2"]. "<br>";
+                            echo "お名前： ". $_POST["name1"]. " ". $_POST["name2"]. "<br>";
                     ?></li>
                     <li><?php
-                        $gender_a = array("1" => "男", "2" => "女", "3" => "不明");
-                        echo "性別： ". $gender_a[$_POST["rdo"]]. "<br>";
+                            $gender_a = array("1" => "男", "2" => "女", "3" => "不明");
+                            echo "性別： ". $gender_a[$_POST["rdo"]]. "<br>";
                     ?></li>
                     <li><?php
-                        echo "電話番号<br>". $_POST["num1"]. "-". $_POST["num2"]. "-". $_POST["num3"]. "<br>";
+                            echo "電話番号<br>". $_POST["num1"]. "-". $_POST["num2"]. "-". $_POST["num3"]. "<br>";
                     ?></li>
                     <li><?php
-                        echo "住所<br>". "〒 ". $_POST["y_num1"]. "-". $_POST["y_num2"]. "<br>";
-                        echo $_POST["address"]. "<br>";
+                            $_POST["y_num1"] = null;
+                            $_POST["y_num2"] = null;
+                            $_POST["address"] = null;
+                            if(isset($_POST["y_num1"]) == false || isset($_POST["y_num2"]) == false || isset($_POST["address"]) == false){
+                                echo "住所<br>未記入です<br>";
+                            }else{
+                                echo "住所<br>". "〒 ". $_POST["y_num1"]. "-". $_POST["y_num2"]. "<br>";
+                                echo $_POST["address"]. "<br>";
+                            }
                     ?></li>
                     <li><?php
                         echo "メールアドレス<br>". $_POST["mail_1"]. "@". $_POST["mail_2"]. "<br>";
@@ -40,12 +47,17 @@
                         echo "<br>";
                     ?>
                     <li><?php
-                        $select_a = array("1" => "商品について", "2" => "サービスについて", "3" => "イベントについて", "4" => "その他");
+                        $select_a = array("0" => "未選択です", "1" => "商品について", "2" => "サービスについて", "3" => "イベントについて", "4" => "その他");
                         echo "質問カテゴリ<br>". $select_a[$_POST["question"]]. "<br>";
                     ?></li>
                     <li><?php
-                        echo "質問内容<br>". $_POST["area"];
+                        echo "質問内容<br>";
                     ?></li>
+                    <div id=box>
+                    <?php
+                        echo $_POST["area"];
+                    ?>
+                </div>
                 </ul>
             </h2>
         </div>

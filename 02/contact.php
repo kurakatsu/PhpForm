@@ -11,9 +11,9 @@
             <table border="1">
                 <caption><h1>お問合せページ</h1></caption>
                 <tr>
-                    <td >お名前</td>
-                    <td>姓: <input type="textbox" name="name1" placeholder="田中"><br><br>
-                        名: <input type="textbox" name="name2" placeholder="太郎">
+                    <td >お名前<div id = req>（必須）</req></td>
+                    <td>姓: <input type="textbox" name="name1" placeholder="田中" required><br><br>
+                        名: <input type="textbox" name="name2" placeholder="太郎" required>
                     </td>
                 </tr>
                 <tr>
@@ -33,11 +33,12 @@
                         <input type="textbox" name="num3" maxlength="4" size="4"></td>
                 </tr>
                 <tr>
-                    <td>メールアドレス</td><td><input type="textbox" name="mail_1" placeholder="sanma0000"> @
-                        <input type="textbox" name="mail_2" placeholder="sasasas.co.jp"></td>
+                    <td>メールアドレス<div id = req>（必須）</req></td><td><input type="textbox" name="mail_1" placeholder="sanma0000" required> @
+                        <input type="textbox" name="mail_2" placeholder="sasasas.co.jp" required></td>
                 </tr>
                 <tr>
-                    <td>どこで知りましたか？</td><td>
+                    <td>どこで知りましたか？</td>
+                    <td>
                         <input type="hidden" name="chk[]" value="0">
                         <label><input type="checkbox" name="chk[]" value="1">雑誌</label>
                         <label><input type="checkbox" name="chk[]" value="2">Web</label>
@@ -45,8 +46,10 @@
                         <label><input type="checkbox" name="chk[]" value="4">その他</label></td>
                 </tr>
                 <tr>
-                    <td>質問カテゴリ選択</td><td>
+                    <td>質問カテゴリ選択</td>
+                    <td>
                         <select name="question">
+                            <option value="0">選択してね</option>
                             <option value="1">商品について</option>
                             <option value="2">サービスについて</option>
                             <option value="3">イベントについて</option>
@@ -54,9 +57,9 @@
                         </select></td>
                 </tr>
                 <tr>
-                    <td>質問内容</td>
-                    <td><textarea cols="50" rows="10" name="area" placeholder="ご意見・ご感想など">
-                    </textarea></td>
+                    <td>質問内容<div id = req>（必須）</req></td>
+                    <td><textarea cols="50" rows="10" name="area" placeholder="ご意見・ご感想など" required></textarea>
+                    </td>
                 </tr>
             </table>
             <div id=s_btn>

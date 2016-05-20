@@ -3,7 +3,7 @@
     width: 662px;
 }
 td {
-    border: solid;
+    border:2px solid;
     padding: 20px;
     width: 170px;
 }
@@ -11,7 +11,7 @@ tbody {
     width: 900px;
 }
 body {
-    background-color: #EEFFFE;
+    background-color: #EEFFFE
 }
 form {
 }
@@ -36,4 +36,8 @@ input#submit_btn {
 }
 #submit_btn {
     width: 632px;
+}
+#req {
+    font-size: 15px;
+    color: #FF3358;
 }
