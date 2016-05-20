@@ -12,8 +12,8 @@
                 <caption><h1>お問合せページ</h1></caption>
                 <tr>
                     <td >お名前</td>
-                    <td>姓: <input type="textbox" name="name1"><br><br>
-                        名: <input type="textbox" name="name2">
+                    <td>姓: <input type="textbox" name="name1" placeholder="田中"><br><br>
+                        名: <input type="textbox" name="name2" placeholder="太郎">
                     </td>
                 </tr>
                 <tr>
@@ -23,18 +23,18 @@
                 </tr>
                 <tr>
                     <td>住所</td>
-                    <td>〒<input type="textbox" maxlength="3" size="1"> -
-                        <input type="textbox" maxlength="4" size="1"><br>
-                        <input type="textbox" name="address"></td>
+                    <td>〒<input type="textbox" name="y_num1" maxlength="3" placeholder="123" size="1"> -
+                        <input type="textbox" name="y_num2" maxlength="4" placeholder="1241" size="1"><br>
+                        <input type="textbox" name="address" placeholder="東京都なんちゃら"></td>
                 </tr>
                 <tr>
-                    <td>電話番号</td><td><input type="textbox" name="num1" size="4"> -
-                        <input type="textbox" name="num2" size="4"> -
-                        <input type="textbox" name="num3" size="4"></td>
+                    <td>電話番号</td><td><input type="textbox" name="num1" maxlength="4" size="4"> -
+                        <input type="textbox" name="num2" maxlength="4" size="4"> -
+                        <input type="textbox" name="num3" maxlength="4" size="4"></td>
                 </tr>
                 <tr>
-                    <td>メールアドレス</td><td><input type="textbox" name="mail_1"> @
-                        <input type="textbox" name="mail_2"></td>
+                    <td>メールアドレス</td><td><input type="textbox" name="mail_1" placeholder="sanma0000"> @
+                        <input type="textbox" name="mail_2" placeholder="sasasas.co.jp"></td>
                 </tr>
                 <tr>
                     <td>どこで知りましたか？</td><td>
@@ -55,7 +55,7 @@
                 </tr>
                 <tr>
                     <td>質問内容</td>
-                    <td><textarea cols="50" rows="10" name="area">
+                    <td><textarea cols="50" rows="10" name="area" placeholder="ご意見・ご感想など">
                     </textarea></td>
                 </tr>
             </table>

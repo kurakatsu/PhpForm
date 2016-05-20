@@ -10,6 +10,9 @@ td {
 tbody {
     width: 900px;
 }
+body {
+    background-color: #EEFFFE;
+}
 form {
 }
 table {
