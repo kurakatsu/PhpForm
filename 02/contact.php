@@ -17,9 +17,9 @@
         <td>名</td><td><input type="textbox" name="name2"></td>
         </tr>
         <tr>
-        <td>性別</td><td><label><input type="radio" name="rdo" value="男" checked>男</label>
-            <label><input type="radio" name="rdo" value="女">女</label>
-            <label><input type="radio" name="rdo" value="不明">不明</label></td>
+        <td>性別</td><td><label><input type="radio" name="rdo" value="1" checked>男</label>
+            <label><input type="radio" name="rdo" value="2">女</label>
+            <label><input type="radio" name="rdo" value="3">不明</label></td>
         </tr>
         <tr>
         <td>住所</td><td><input type="textbox" name="address"></td>
@@ -35,18 +35,18 @@
         </tr>
         <tr>
         <td>どこで知りましたか？</td><td>
-            <label><input type="checkbox" name="chk[]" value="雑誌">雑誌</label>
-            <label><input type="checkbox" name="chk[]" value="Web">Web</label>
-            <label><input type="checkbox" name="chk[]" value="友人">友人</label>
-            <label><input type="checkbox" name="chk[]" value="その他">その他</label></td>
+            <label><input type="checkbox" name="chk[]" value="1">雑誌</label>
+            <label><input type="checkbox" name="chk[]" value="2">Web</label>
+            <label><input type="checkbox" name="chk[]" value="3">友人</label>
+            <label><input type="checkbox" name="chk[]" value="4">その他</label></td>
         </tr>
         <tr>
         <td>質問カテゴリ選択</td><td>
             <select name="question">
-                <option>商品について</option>
-                <option>サービスについて</option>
-                <option>イベントについて</option>
-                <option>その他</option>
+                <option value="1">商品について</option>
+                <option value="2">サービスについて</option>
+                <option value="3">イベントについて</option>
+                <option value="4">その他</option>
             </select></td>
         </tr>
         <tr>
