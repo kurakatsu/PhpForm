@@ -1,8 +1,8 @@
 #page {
     margin: 50px auto;
-    width: 900px;
-    border: solid 1px #FFFFFF;
-    background-color: #FFFFFF;
+    width: 850px;
+    border: solid 1px #6E6F70;
+    background-color: rgba(110,111,112,0.5);;
     border-radius: 10px;
 }
 #main {
@@ -10,8 +10,9 @@
     float: left;
 }
 #sub {
+    color: #EFEEF0;
     width: 600px;
-    float: left;
+    float: right;
 }
 .clearfix:after {
     content: " ";
@@ -25,45 +26,60 @@
 
 body {
     margin: 0 auto;
-    width: 800px;
-    background-color: #16E23F
+    width: 850px;
+    /*background: linear-gradient(#13D1A6, #94F080, #13D1A6);*/
+    background-image: url("hatena.png");
+    /*background-color: rgba(19,209,166,0.5);*/
+    background-color: rgba(49,50,55,1);;
 }
 h1 {
+    color:#EFEEF0;
     margin-left: 30px;
     font-size: 60px;
 }
 h2 {
+    color: #EFEEF0;
     margin: 10px;
+    /*text-shadow:
+        0 1px 0 #1BBE45,
+        1px 0 0 #1BBE45,
+        0 -1px 0 #1BBE45,
+        -1px 0 0 #1BBE45,
+        -1px 0 0 #1BBE45,
+        1px -1px 0 #1BBE45,
+        -1px 1px 0 #1BBE45,
+        1px 1px 0 #1BBE45;*/
 }
 .name {
     margin-top: 10px;
-    margin-bottom: 10px;
-    height: 60px;
+    height: 75px;
 }
 .rdo {
     margin-top: 30px;
     margin-bottom: 10px;
-    height: 60px;
+    height: 50px;
 }
 .add {
     margin-top: 10px;
-    margin-bottom: 10px;
-    height: 80px;
+    margin-bottom: 30px;
+    height: 105px;
 }
 #addleft {
     float:left;
-    width: 300px;
+    width: 180px;
     line-height: 2em;
+    text-align: right;
 }
 #addright {
-    float: right;
+    float: left;
     width: 300px;
     line-height: 2em;
+    margin-left: 20px;
 }
 .number {
-    margin-top: 20px;
+    margin-top: 10px;
     margin-bottom: 10px;
-    height: 60px;
+    height: 55px;
 }
 .mail {
     margin-top: 20px;
@@ -102,6 +118,10 @@ input#submit_btn {
 }
 #submit_btn {
     width: 632px;
+}
+#submit_btn:hover{
+    background-color: #313237;
+    color: #EFEEF0;
 }
 #req {
     font-size: 15px;

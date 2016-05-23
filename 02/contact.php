@@ -36,20 +36,20 @@
                             アパート・マンション名等<br>
                         </div>
                         <div id = addright>
-                            〒<input type="textbox" name="y_num1" maxlength="3" placeholder="123" size="1"> -
+                            <input type="textbox" name="y_num1" maxlength="3" placeholder="123" size="1"> -
                             <input type="textbox" name="y_num2" maxlength="4" placeholder="1241" size="1"><br>
-                            <input type="textbox" name="address1" placeholder="東京都なんちゃら"><br>
-                            <input type="textbox" name="address2" placeholder="○×マンション"><br>
+                            <input type="textbox" name="address1" placeholder="東京都なんちゃら" size="30"><br>
+                            <input type="textbox" name="address2" placeholder="○×マンション" size="30"><br>
                         </div>
                     </div>
                     <div class = "number">
-                        <input type="textbox" name="num1" maxlength="4" size="4"> -
-                        <input type="textbox" name="num2" maxlength="4" size="4"> -
-                        <input type="textbox" name="num3" maxlength="4" size="4"><br>
+                        <input type="textbox" name="num1" maxlength="4" placeholder="123" size="4"> -
+                        <input type="textbox" name="num2" maxlength="4" placeholder="9999" size="4"> -
+                        <input type="textbox" name="num3" maxlength="4" placeholder="9999" size="4"><br>
                     </div>
                     <div class = "mail">
                         <input type="textbox" name="mail_1" placeholder="sanma0000" required> @
-                        <input type="textbox" name="mail_2" placeholder="sasasas.co.jp" required><br>
+                        <input type="textbox" name="mail_2" placeholder="sasasa.co.jp" required><br>
                     </div>
                     <div class = "where">
                         <label><input type="checkbox" name="chk[]" value="1">雑誌</label>
@@ -67,7 +67,7 @@
                         </select><br>
                     </div>
                 <div class = "value">
-                    <textarea cols="50" rows="10" name="area" placeholder="ご意見・ご感想など" required></textarea>
+                    <textarea cols="70" rows="10" name="area" placeholder="ご意見・ご感想など" required></textarea>
                 </div>
             </div>
             <div id=s_btn>
