@@ -39,7 +39,6 @@
                 <tr>
                     <td>どこで知りましたか？</td>
                     <td>
-                        <input type="hidden" name="chk[]" value="0">
                         <label><input type="checkbox" name="chk[]" value="1">雑誌</label>
                         <label><input type="checkbox" name="chk[]" value="2">Web</label>
                         <label><input type="checkbox" name="chk[]" value="3">友人</label>
