@@ -1,23 +1,89 @@
 #page {
-    margin: 0 auto;
-    width: 662px;
-}
-td {
-    border:2px solid;
-    padding: 20px;
-    width: 170px;
-}
-tbody {
+    margin: 50px auto;
     width: 900px;
+    border: solid 1px #FFFFFF;
+    background-color: #FFFFFF;
+    border-radius: 10px;
 }
+#main {
+    width: 230px;
+    float: left;
+}
+#sub {
+    width: 600px;
+    float: left;
+}
+.clearfix:after {
+    content: " ";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+}
+*html .clearfix {height: 1%;}
+.clearfix {display: block;}
+
 body {
-    background-color: #EEFFFE
+    margin: 0 auto;
+    width: 800px;
+    background-color: #16E23F
 }
-form {
+h1 {
+    margin-left: 30px;
+    font-size: 60px;
 }
-table {
-    border: solid 1px #000000;
-    border-collapse: collapse;
+h2 {
+    margin: 10px;
+}
+.name {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    height: 60px;
+}
+.rdo {
+    margin-top: 30px;
+    margin-bottom: 10px;
+    height: 60px;
+}
+.add {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    height: 80px;
+}
+#addleft {
+    float:left;
+    width: 300px;
+    line-height: 2em;
+}
+#addright {
+    float: right;
+    width: 300px;
+    line-height: 2em;
+}
+.number {
+    margin-top: 20px;
+    margin-bottom: 10px;
+    height: 60px;
+}
+.mail {
+    margin-top: 20px;
+    margin-bottom: 10px;
+    height: 60px;
+}
+.where {
+    margin-top: 20px;
+    margin-bottom: 10px;
+    height: 60px;
+}
+.select {
+    margin-top: 20px;
+    margin-bottom: 10px;
+    height: 60px;
+}
+.value {
+    margin-top: 20px;
+    margin-bottom: 10px;
+    height: 160px;
 }
 textarea {
     resize: none;
@@ -39,5 +105,5 @@ input#submit_btn {
 }
 #req {
     font-size: 15px;
-    color: #FF3358;
+    color: #ED0605;
 }
