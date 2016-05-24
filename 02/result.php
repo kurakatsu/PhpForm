@@ -8,34 +8,28 @@
     <body>
         <div id="word">
             <h1>入力内容をご確認ください</h1>
-            <h2>
+            <div id="word2">
                 <ul>
                     <li><?php
-                            echo "お名前： ". htmlspecialchars($_POST["name1"]). " ". htmlspecialchars($_POST["name2"]). "<br>";
+                            echo "お名前<br>". htmlspecialchars($_POST["name1"]). " ". htmlspecialchars($_POST["name2"]). "<br>";
                     ?></li>
                     <li><?php
                             $gender_a = array("1" => "男", "2" => "女", "3" => "不明");
-                            echo "性別： ". $gender_a[$_POST["rdo"]]. "<br>";
+                            echo "性別<br>". $gender_a[$_POST["rdo"]]. "<br>";
                     ?></li>
                     <li><?php
-                            $_POST["num1"] = null;
-                            $_POST["num2"] = null;
-                            $_POST["num3"] = null;
-                            if(isset($_POST["num1"]) == false || isset($_POST["num2"]) == false || isset($_POST["num3"]) == false){
+                            if(($_POST["num1"]) == "" || ($_POST["num2"]) == "" || ($_POST["num3"]) == ""){
                                 echo "電話番号<br>未記入です<br>";
                             }else{
                             echo "電話番号<br>". htmlspecialchars($_POST["num1"], ENT_QUOTES). "-". htmlspecialchars($_POST["num2"], ENT_QUOTES). "-". htmlspecialchars($_POST["num3"]). "<br>";
                             }
                     ?></li>
                     <li><?php
-                            $_POST["y_num1"] = null;
-                            $_POST["y_num2"] = null;
-                            $_POST["address"] = null;
-                            if(isset($_POST["y_num1"]) == false || isset($_POST["y_num2"]) == false || isset($_POST["address"]) == false){
+                            if($_POST["y_num1"] == "" || $_POST["y_num2"] == "" || $_POST["address1"] == ""){
                                 echo "住所<br>未記入です<br>";
                             }else{
                                 echo "住所<br>". "〒 ". $_POST["y_num1"]. "-". $_POST["y_num2"]. "<br>";
-                                echo htmlspecialchars($_POST["address"], ENT_QUOTES). "<br>";
+                                echo htmlspecialchars($_POST["address1"], ENT_QUOTES). " ". htmlspecialchars($_POST["address2"], ENT_QUOTES). "<br>";
                             }
                     ?></li>
                     <li><?php
@@ -45,13 +39,17 @@
                         echo "どこで知りましたか？<br>";
                     ?></li>
                     <?php
-                        $_POST["chk"] = null;
+                        $count = 0;
                         $check_a = array("1" => "雑誌", "2" => "Web", "3" => "友人", "4" => "その他");
-                        if(isset($_POST["chk"]) == false ){
-                            echo "未選択です<br>";
+                        if(isset($_POST["chk"]) == false){
+                            echo "未選択";
                         }else{
                             foreach($_POST["chk"] as $value){
-                                echo $check_a[$value], ENT_QUOTES. " ";
+                                if($count > 0){
+                                    echo ", ";
+                                }
+                                echo $check_a[$value];
+                                $count++;
                             }
                         }
                     ?>
@@ -62,16 +60,45 @@
                     <li><?php
                         echo "質問内容<br>";
                     ?></li>
-                    <div id=box>
-                    <?php
-                        echo nl2br(htmlspecialchars($_POST["area"], ENT_QUOTES));
-                        //さらに、, に続けて ENT_QUOTES と書くと、' （シングルクォート）も &#039; に変換されて返されます。
-                        //この処理は、訪問者から送信されたデータを表示する際には必ず行うようにしてください。もしこの処理を忘れると、フォームから送信する際に入力されたHTMLやJavaScriptをそのまま解釈してしまいます。
-                        //もし悪意あるJavaScriptが埋め込まれると訪問者全員に影響を与えてしまうため、それを防ぐためにも htmlspecialchars で安全な文字列に変換します。
-                    ?>
-                </div>
                 </ul>
-            </h2>
+            </div>
+            <div id=box>
+                <div id="word3">
+            <?php
+                echo nl2br(htmlspecialchars($_POST["area"], ENT_QUOTES));
+                //さらに、, に続けて ENT_QUOTES と書くと、' （シングルクォート）も &#039; に変換されて返されます。
+                //この処理は、訪問者から送信されたデータを表示する際には必ず行うようにしてください。もしこの処理を忘れると、フォームから送信する際に入力されたHTMLやJavaScriptをそのまま解釈してしまいます。
+                //もし悪意あるJavaScriptが埋め込まれると訪問者全員に影響を与えてしまうため、それを防ぐためにも htmlspecialchars で安全な文字列に変換します。
+            ?>
         </div>
+        </div>
+        </div>
+        <?php
+            $count = 0;
+            $filename = "contact_log.txt";
+            $current = file_get_contents($filename);
+            $current .= "名前\n". $_POST["name1"]. " ". $_POST["name2"]. "\n";
+            $current .= "性別\n". $gender_a[$_POST["rdo"]]. "\n";
+            $current .= "住所\n". "〒". $_POST["y_num1"]. "-". $_POST["y_num2"]. "\n";
+            $current .= htmlspecialchars($_POST["address1"], ENT_QUOTES). " ". htmlspecialchars($_POST["address2"], ENT_QUOTES). "\n";
+            $current .= "電話番号\n". htmlspecialchars($_POST["num1"], ENT_QUOTES). "-". htmlspecialchars($_POST["num2"], ENT_QUOTES). "-". htmlspecialchars($_POST["num3"]). "\n";
+            $current .= "メールアドレス\n". htmlspecialchars($_POST["mail_1"], ENT_QUOTES). htmlspecialchars("@". $_POST["mail_2"], ENT_QUOTES). "\n";
+            $current .= "どこで知りましたか？\n";
+            if(isset($_POST["chk"]) == false){
+                $current .= "未選択";
+            }else{
+                foreach($_POST["chk"] as $value){
+                    if($count > 0){
+                        $current .= ", ";
+                    }
+                    $current .= $check_a[$value];
+                    $count++;
+                }
+            }
+            $current .= "\n";
+            $current .= "質問カテゴリ\n". $select_a[$_POST["question"]]. "\n";
+            $current .= "質問内容\n". htmlspecialchars($_POST["area"], ENT_QUOTES). "\n\n";
+            file_put_contents($filename, $current);
+         ?>
     </body>
 </html>

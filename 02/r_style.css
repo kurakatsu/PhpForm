@@ -1,22 +1,46 @@
 body {
     margin: 0 auto;
-    width: 800px;
-    border: solid;
-    background-color: #EEFFFE;
+    width: 850px;
+    /*background: linear-gradient(#13D1A6, #94F080, #13D1A6);*/
+    background-image: url("sea.jpg");
+    background-size: cover;
+    /*background-color: rgba(19,209,166,0.5);*/
+    background-color: rgba(49,50,55,1);
 }
 #word {
     margin: 50px auto;
-    width: 500px;
+    width: 850px;
+    border: solid 1px #6E6F70;
+    background-color: rgba(110,111,112,0.5);;
+    border-radius: 10px;
 }
 h1 {
-    font-size: 2.3em;
+    color:#EFEEF0;
+    font-size: 2.8em;
     width: 800px;
+    margin-left: 20px;
+}
+#word2 {
+    color: #EAFFDA;
+    margin-left: 55px;
+    line-height: 2em;
+    font-size: 1.5em;
 }
 li {
     margin-top: 10px;
     margin-bottom: 10px;
 }
 #box {
-    border:2px solid;
+    font-size: 1.25em;
+    margin-left: 130px;
+    margin-bottom: 50px;
+    color: #EAFFDA;
+    border:1.5px solid;
     height: 150px;
+    width: 670px;
+}
+#div {
+    font-size: 2em;
+    color: #EFEEF0;
+    line-height: 1.2em;
 }
