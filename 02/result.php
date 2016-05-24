@@ -8,7 +8,7 @@
     <body>
         <div id="word">
             <h1>入力内容をご確認ください</h1>
-            <h2>
+            <div id="word2">
                 <ul>
                     <li><?php
                             echo "お名前<br>". htmlspecialchars($_POST["name1"]). " ". htmlspecialchars($_POST["name2"]). "<br>";
@@ -60,16 +60,18 @@
                     <li><?php
                         echo "質問内容<br>";
                     ?></li>
-                    <div id=box>
-                    <?php
-                        echo nl2br(htmlspecialchars($_POST["area"], ENT_QUOTES));
-                        //さらに、, に続けて ENT_QUOTES と書くと、' （シングルクォート）も &#039; に変換されて返されます。
-                        //この処理は、訪問者から送信されたデータを表示する際には必ず行うようにしてください。もしこの処理を忘れると、フォームから送信する際に入力されたHTMLやJavaScriptをそのまま解釈してしまいます。
-                        //もし悪意あるJavaScriptが埋め込まれると訪問者全員に影響を与えてしまうため、それを防ぐためにも htmlspecialchars で安全な文字列に変換します。
-                    ?>
-                </div>
                 </ul>
-            </h2>
+            </div>
+            <div id=box>
+                <div id="word3">
+            <?php
+                echo nl2br(htmlspecialchars($_POST["area"], ENT_QUOTES));
+                //さらに、, に続けて ENT_QUOTES と書くと、' （シングルクォート）も &#039; に変換されて返されます。
+                //この処理は、訪問者から送信されたデータを表示する際には必ず行うようにしてください。もしこの処理を忘れると、フォームから送信する際に入力されたHTMLやJavaScriptをそのまま解釈してしまいます。
+                //もし悪意あるJavaScriptが埋め込まれると訪問者全員に影響を与えてしまうため、それを防ぐためにも htmlspecialchars で安全な文字列に変換します。
+            ?>
+        </div>
+        </div>
         </div>
     </body>
 </html>

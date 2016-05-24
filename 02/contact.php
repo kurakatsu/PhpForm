@@ -2,11 +2,11 @@
 <html lang="ja">
 <head>
     <meta charset="UTF-8">
-    <title>お問合せページ</title>
+    <title>お問い合わせフォーム</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <h1>お問合せページ</h1>
+    <h1>お問い合わせフォーム</h1>
     <form action="result.php" method="POST">
         <div class = "clearfix" id= page>
             <div id = main>
@@ -43,15 +43,15 @@
                         </div>
                     </div>
                     <div class = "number">
-                        <input type="textbox" name="num1" maxlength="4" style="background-color:#EFEEF0;" placeholder="123" size="3"> -
-                        <input type="textbox" name="num2" maxlength="4" style="background-color:#EFEEF0;" placeholder="9999" size="3"> -
-                        <input type="textbox" name="num3" maxlength="4" style="background-color:#EFEEF0;" placeholder="9999" size="3">
+                        <input type="textbox" name="num1" maxlength="4" style="background-color:#EFEEF0;" placeholder="123" size="3" pattern="^[0-9]+$"> -
+                        <input type="textbox" name="num2" maxlength="4" style="background-color:#EFEEF0;" placeholder="9999" size="3" pattern="^[0-9]+$"> -
+                        <input type="textbox" name="num3" maxlength="4" style="background-color:#EFEEF0;" placeholder="9999" size="3" pattern="^[0-9]+$">
                         <div id = req>※半角数字で記入してください</div><br>
                     </div>
                     <div class = "mail">
                         <input type="textbox" name="mail_1" style="background-color:#EFEEF0;" placeholder="sanma0000" required> @
                         <input type="textbox" name="mail_2" style="background-color:#EFEEF0;" placeholder="sasasa.co.jp" required size="12">
-                        <div id = req>※半角数字で記入してください</div><br>
+                        <div id = req>※半角英数字及び記号で記入してください</div><br>
                     </div>
                     <div class = "where">
                         <label><input type="checkbox" name="chk[]" value="1">雑誌</label>
@@ -69,11 +69,11 @@
                         </select><br>
                     </div>
                 <div class = "value">
-                    <textarea cols="70" rows="10" name="area" style="background-color:#EFEEF0;" placeholder="ご意見・ご感想など" required></textarea>
+                    <textarea cols="55" rows="10" name="area" style="background-color:#EFEEF0;" placeholder="ご意見・ご感想など" required wrap="hard"></textarea>
                 </div>
             </div>
             <div id=s_btn>
-                <p><input id="submit_btn" type="submit"></p>
+                <input id="submit_btn" type="submit">
             </div>
         </div>
     </form>
