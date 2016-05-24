@@ -21,7 +21,7 @@
             </div>
             <div id = sub>
                     <div class = "name">
-                        姓: <input type="textbox" name="name1" style="background-color:#EFEEF0;" placeholder="田中" required><br><br>
+                        姓: <input type="textbox" name="name1" style="background-color:#EFEEF0;" placeholder="田中" required><br>
                         名: <input type="textbox" name="name2" style="background-color:#EFEEF0;" placeholder="太郎" required><br>
                     </div>
                     <div class = "rdo">
@@ -43,13 +43,15 @@
                         </div>
                     </div>
                     <div class = "number">
-                        <input type="textbox" name="num1" maxlength="4" style="background-color:#EFEEF0;" placeholder="123" size="4"> -
-                        <input type="textbox" name="num2" maxlength="4" style="background-color:#EFEEF0;" placeholder="9999" size="4"> -
-                        <input type="textbox" name="num3" maxlength="4" style="background-color:#EFEEF0;" placeholder="9999" size="4">　※半角数字で記入してください<br>
+                        <input type="textbox" name="num1" maxlength="4" style="background-color:#EFEEF0;" placeholder="123" size="3"> -
+                        <input type="textbox" name="num2" maxlength="4" style="background-color:#EFEEF0;" placeholder="9999" size="3"> -
+                        <input type="textbox" name="num3" maxlength="4" style="background-color:#EFEEF0;" placeholder="9999" size="3">
+                        <div id = req>※半角数字で記入してください</div><br>
                     </div>
                     <div class = "mail">
                         <input type="textbox" name="mail_1" style="background-color:#EFEEF0;" placeholder="sanma0000" required> @
-                        <input type="textbox" name="mail_2" style="background-color:#EFEEF0;" placeholder="sasasa.co.jp" required><br>
+                        <input type="textbox" name="mail_2" style="background-color:#EFEEF0;" placeholder="sasasa.co.jp" required size="12">
+                        <div id = req>※半角数字で記入してください</div><br>
                     </div>
                     <div class = "where">
                         <label><input type="checkbox" name="chk[]" value="1">雑誌</label>

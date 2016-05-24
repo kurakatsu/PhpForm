@@ -44,6 +44,7 @@ h2 {
 .name {
     margin-top: 10px;
     height: 75px;
+    line-height: 1.5em;
 }
 .rdo {
     margin-top: 30px;
@@ -74,11 +75,13 @@ h2 {
     margin-top: 10px;
     margin-bottom: 10px;
     height: 55px;
+    line-height: 1.5em;
 }
 .mail {
     margin-top: 20px;
     margin-bottom: 10px;
     height: 60px;
+    line-height: 1.5em;
 }
 .where {
     margin-top: 20px;
@@ -94,6 +97,7 @@ h2 {
     margin-top: 20px;
     margin-bottom: 10px;
     height: 160px;
+    line-height: 1.5em;
 }
 textarea {
     resize: none;
@@ -120,5 +124,6 @@ input#submit_btn {
 }
 #req {
     font-size: 15px;
-    color: #ED0605;
+    color: #FF4C4C;
+    /*#ED0605;*/
 }

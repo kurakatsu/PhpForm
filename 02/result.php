@@ -18,13 +18,6 @@
                             echo "性別<br>". $gender_a[$_POST["rdo"]]. "<br>";
                     ?></li>
                     <li><?php
-                            /*echo isset($_POST["num1"]). "<br>";
-                            echo isset($_POST["num2"]). "<br>";
-                            echo isset($_POST["num3"]). "<br>";
-                            var_dump($_POST["number1"])."<br>";
-                            var_dump(isset($_POST["num1"])). "<br>";
-                             echo $_POST["num2"]. "<br>";
-                             echo $_POST["num3"]. "<br>";*/
                             if(($_POST["num1"]) == "" || ($_POST["num2"]) == "" || ($_POST["num3"]) == ""){
                                 echo "電話番号<br>未記入です<br>";
                             }else{
@@ -32,11 +25,11 @@
                             }
                     ?></li>
                     <li><?php
-                            if(isset($_POST["y_num1"]) == false || isset($_POST["y_num2"]) == false || isset($_POST["address"]) == false){
+                            if($_POST["y_num1"] == "" || $_POST["y_num2"] == "" || $_POST["address1"] == "" || $_POST["address2"] == ""){
                                 echo "住所<br>未記入です<br>";
                             }else{
                                 echo "住所<br>". "〒 ". $_POST["y_num1"]. "-". $_POST["y_num2"]. "<br>";
-                                echo htmlspecialchars($_POST["address"], ENT_QUOTES). "<br>";
+                                echo htmlspecialchars($_POST["address1"], ENT_QUOTES). " ". htmlspecialchars($_POST["address2"], ENT_QUOTES). "<br>";
                             }
                     ?></li>
                     <li><?php
