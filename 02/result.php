@@ -18,7 +18,14 @@
                             echo "性別<br>". $gender_a[$_POST["rdo"]]. "<br>";
                     ?></li>
                     <li><?php
-                            if(isset($_POST["num1"]) == false || isset($_POST["num2"]) == false || isset($_POST["num3"]) == false){
+                            /*echo isset($_POST["num1"]). "<br>";
+                            echo isset($_POST["num2"]). "<br>";
+                            echo isset($_POST["num3"]). "<br>";
+                            var_dump($_POST["number1"])."<br>";
+                            var_dump(isset($_POST["num1"])). "<br>";
+                             echo $_POST["num2"]. "<br>";
+                             echo $_POST["num3"]. "<br>";*/
+                            if(($_POST["num1"]) == "" || ($_POST["num2"]) == "" || ($_POST["num3"]) == ""){
                                 echo "電話番号<br>未記入です<br>";
                             }else{
                             echo "電話番号<br>". htmlspecialchars($_POST["num1"], ENT_QUOTES). "-". htmlspecialchars($_POST["num2"], ENT_QUOTES). "-". htmlspecialchars($_POST["num3"]). "<br>";

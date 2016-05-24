@@ -45,14 +45,13 @@
                     <div class = "number">
                         <input type="textbox" name="num1" maxlength="4" style="background-color:#EFEEF0;" placeholder="123" size="4"> -
                         <input type="textbox" name="num2" maxlength="4" style="background-color:#EFEEF0;" placeholder="9999" size="4"> -
-                        <input type="textbox" name="num3" maxlength="4" style="background-color:#EFEEF0;" placeholder="9999" size="4"><br>
+                        <input type="textbox" name="num3" maxlength="4" style="background-color:#EFEEF0;" placeholder="9999" size="4">　※半角数字で記入してください<br>
                     </div>
                     <div class = "mail">
                         <input type="textbox" name="mail_1" style="background-color:#EFEEF0;" placeholder="sanma0000" required> @
                         <input type="textbox" name="mail_2" style="background-color:#EFEEF0;" placeholder="sasasa.co.jp" required><br>
                     </div>
                     <div class = "where">
-                        <input type="hidden" name=""chk[]" value="5">
                         <label><input type="checkbox" name="chk[]" value="1">雑誌</label>
                         <label><input type="checkbox" name="chk[]" value="2">Web</label>
                         <label><input type="checkbox" name="chk[]" value="3">友人</label>
