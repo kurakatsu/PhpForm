@@ -25,7 +25,7 @@
                             }
                     ?></li>
                     <li><?php
-                            if($_POST["y_num1"] == "" || $_POST["y_num2"] == "" || $_POST["address1"] == "" || $_POST["address2"] == ""){
+                            if($_POST["y_num1"] == "" || $_POST["y_num2"] == "" || $_POST["address1"] == ""){
                                 echo "住所<br>未記入です<br>";
                             }else{
                                 echo "住所<br>". "〒 ". $_POST["y_num1"]. "-". $_POST["y_num2"]. "<br>";
@@ -73,5 +73,32 @@
         </div>
         </div>
         </div>
+        <?php
+            $count = 0;
+            $filename = "contact_log.txt";
+            $current = file_get_contents($filename);
+            $current .= "名前\n". $_POST["name1"]. " ". $_POST["name2"]. "\n";
+            $current .= "性別\n". $gender_a[$_POST["rdo"]]. "\n";
+            $current .= "住所\n". "〒". $_POST["y_num1"]. "-". $_POST["y_num2"]. "\n";
+            $current .= htmlspecialchars($_POST["address1"], ENT_QUOTES). " ". htmlspecialchars($_POST["address2"], ENT_QUOTES). "\n";
+            $current .= "電話番号\n". htmlspecialchars($_POST["num1"], ENT_QUOTES). "-". htmlspecialchars($_POST["num2"], ENT_QUOTES). "-". htmlspecialchars($_POST["num3"]). "\n";
+            $current .= "メールアドレス\n". htmlspecialchars($_POST["mail_1"], ENT_QUOTES). htmlspecialchars("@". $_POST["mail_2"], ENT_QUOTES). "\n";
+            $current .= "どこで知りましたか？\n";
+            if(isset($_POST["chk"]) == false){
+                $current .= "未選択";
+            }else{
+                foreach($_POST["chk"] as $value){
+                    if($count > 0){
+                        $current .= ", ";
+                    }
+                    $current .= $check_a[$value];
+                    $count++;
+                }
+            }
+            $current .= "\n";
+            $current .= "質問カテゴリ\n". $select_a[$_POST["question"]]. "\n";
+            $current .= "質問内容\n". htmlspecialchars($_POST["area"], ENT_QUOTES). "\n\n";
+            file_put_contents($filename, $current);
+         ?>
     </body>
 </html>
