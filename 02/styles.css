@@ -40,15 +40,6 @@ h1 {
 h2 {
     color: #EFEEF0;
     margin: 10px;
-    /*text-shadow:
-        0 1px 0 #1BBE45,
-        1px 0 0 #1BBE45,
-        0 -1px 0 #1BBE45,
-        -1px 0 0 #1BBE45,
-        -1px 0 0 #1BBE45,
-        1px -1px 0 #1BBE45,
-        -1px 1px 0 #1BBE45,
-        1px 1px 0 #1BBE45;*/
 }
 .name {
     margin-top: 10px;
@@ -67,13 +58,16 @@ h2 {
 #addleft {
     float:left;
     width: 180px;
+    /*行間調節*/
     line-height: 2em;
+    /*文字を右寄せにする*/
     text-align: right;
 }
 #addright {
     float: left;
     width: 300px;
     line-height: 2em;
+    /*文字を左寄せにする*/
     margin-left: 20px;
 }
 .number {
@@ -114,6 +108,7 @@ input#submit_btn {
     height: 50px;
     font-size: 1.5em;
     border: none;
+    /*過度を丸っこくする*/
     border-radius: 5px;
 }
 #submit_btn {

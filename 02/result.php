@@ -11,16 +11,13 @@
             <h2>
                 <ul>
                     <li><?php
-                            echo "お名前： ". htmlspecialchars($_POST["name1"]). " ". htmlspecialchars($_POST["name2"]). "<br>";
+                            echo "お名前<br>". htmlspecialchars($_POST["name1"]). " ". htmlspecialchars($_POST["name2"]). "<br>";
                     ?></li>
                     <li><?php
                             $gender_a = array("1" => "男", "2" => "女", "3" => "不明");
-                            echo "性別： ". $gender_a[$_POST["rdo"]]. "<br>";
+                            echo "性別<br>". $gender_a[$_POST["rdo"]]. "<br>";
                     ?></li>
                     <li><?php
-                            $_POST["num1"] = null;
-                            $_POST["num2"] = null;
-                            $_POST["num3"] = null;
                             if(isset($_POST["num1"]) == false || isset($_POST["num2"]) == false || isset($_POST["num3"]) == false){
                                 echo "電話番号<br>未記入です<br>";
                             }else{
@@ -28,9 +25,6 @@
                             }
                     ?></li>
                     <li><?php
-                            $_POST["y_num1"] = null;
-                            $_POST["y_num2"] = null;
-                            $_POST["address"] = null;
                             if(isset($_POST["y_num1"]) == false || isset($_POST["y_num2"]) == false || isset($_POST["address"]) == false){
                                 echo "住所<br>未記入です<br>";
                             }else{
@@ -45,13 +39,17 @@
                         echo "どこで知りましたか？<br>";
                     ?></li>
                     <?php
-                        $_POST["chk"] = null;
+                        $count = 0;
                         $check_a = array("1" => "雑誌", "2" => "Web", "3" => "友人", "4" => "その他");
-                        if(isset($_POST["chk"]) == false ){
-                            echo "未選択です<br>";
+                        if(isset($_POST["chk"]) == false){
+                            echo "未選択";
                         }else{
                             foreach($_POST["chk"] as $value){
-                                echo $check_a[$value], ENT_QUOTES. " ";
+                                if($count > 0){
+                                    echo ", ";
+                                }
+                                echo $check_a[$value];
+                                $count++;
                             }
                         }
                     ?>

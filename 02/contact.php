@@ -52,6 +52,7 @@
                         <input type="textbox" name="mail_2" style="background-color:#EFEEF0;" placeholder="sasasa.co.jp" required><br>
                     </div>
                     <div class = "where">
+                        <input type="hidden" name=""chk[]" value="5">
                         <label><input type="checkbox" name="chk[]" value="1">雑誌</label>
                         <label><input type="checkbox" name="chk[]" value="2">Web</label>
                         <label><input type="checkbox" name="chk[]" value="3">友人</label>
