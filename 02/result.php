@@ -11,7 +11,11 @@
             <div id="word2">
                 <ul>
                     <li><?php
-                            echo "お名前<br>". htmlspecialchars($_POST["name1"]). " ". htmlspecialchars($_POST["name2"]). "<br>";
+                            if($_POST["name1"] == "" || $_POST["name2"] == ""){
+                                echo "未記入です<br>";
+                            }else{
+                                    echo "お名前<br>". htmlspecialchars($_POST["name1"]). " ". htmlspecialchars($_POST["name2"]). "<br>";
+                            }
                     ?></li>
                     <li><?php
                             $gender_a = array("1" => "男", "2" => "女", "3" => "不明");
@@ -33,7 +37,11 @@
                             }
                     ?></li>
                     <li><?php
-                        echo "メールアドレス<br>". htmlspecialchars($_POST["mail_1"], ENT_QUOTES). htmlspecialchars("@". $_POST["mail_2"], ENT_QUOTES). "<br>";
+                            if($_POST["mail_1"] == "" || $_POST["mail_2"] == ""){
+                                echo "メールアドレス<br>未記入です<br>";
+                            }else{
+                                echo "メールアドレス<br>". htmlspecialchars($_POST["mail_1"], ENT_QUOTES). htmlspecialchars("@". $_POST["mail_2"], ENT_QUOTES). "<br>";
+                            }
                     ?></li>
                     <li><?php
                         echo "どこで知りましたか？<br>";
@@ -42,7 +50,7 @@
                         $count = 0;
                         $check_a = array("1" => "雑誌", "2" => "Web", "3" => "友人", "4" => "その他");
                         if(isset($_POST["chk"]) == false){
-                            echo "未選択";
+                            echo "未選択です";
                         }else{
                             foreach($_POST["chk"] as $value){
                                 if($count > 0){
@@ -65,18 +73,24 @@
             <div id=box>
                 <div id="word3">
             <?php
-                echo nl2br(htmlspecialchars($_POST["area"], ENT_QUOTES));
+                if($_POST["area"] == ""){
+                    echo "記入内容がありません";
+                }else{
+                    echo nl2br(htmlspecialchars($_POST["area"], ENT_QUOTES));
                 //さらに、, に続けて ENT_QUOTES と書くと、' （シングルクォート）も &#039; に変換されて返されます。
                 //この処理は、訪問者から送信されたデータを表示する際には必ず行うようにしてください。もしこの処理を忘れると、フォームから送信する際に入力されたHTMLやJavaScriptをそのまま解釈してしまいます。
                 //もし悪意あるJavaScriptが埋め込まれると訪問者全員に影響を与えてしまうため、それを防ぐためにも htmlspecialchars で安全な文字列に変換します。
+                }
             ?>
         </div>
         </div>
         </div>
         <?php
             $count = 0;
+            $week = array("Sun","Mon","Tue","Wed","THU","Fri","Sat");
             $filename = "contact_log.txt";
             $current = file_get_contents($filename);
+            $current .= date('Y,m,d H,i,s'). " ". $week[date('w')]. "\n";
             $current .= "名前\n". $_POST["name1"]. " ". $_POST["name2"]. "\n";
             $current .= "性別\n". $gender_a[$_POST["rdo"]]. "\n";
             $current .= "住所\n". "〒". $_POST["y_num1"]. "-". $_POST["y_num2"]. "\n";
