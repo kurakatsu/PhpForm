@@ -7,7 +7,7 @@
 </head>
 <body>
     <h1>お問い合わせフォーム</h1>
-    <form action="result.php" method="POST" onsubmit="return check2()">
+    <form action="result.php" method="POST" >
         <div class = "clearfix" id= page>
             <div id = main>
                 <div class = "name"><h2>お名前<div id = req>（必須）</div></h2></div>
@@ -21,8 +21,8 @@
             </div>
             <div id = sub>
                     <div class = "name">
-                        姓: <input type="textbox" name="name1" style="background-color:#EFEEF0;" placeholder="田中" ><br>
-                        名: <input type="textbox" name="name2" style="background-color:#EFEEF0;" placeholder="太郎" ><br>
+                        姓: <input type="textbox" name="name1" style="background-color:#EFEEF0;" placeholder="田中" required><br>
+                        名: <input type="textbox" name="name2" style="background-color:#EFEEF0;" placeholder="太郎" required><br>
                     </div>
                     <div class = "rdo">
                         <label><input type="radio" name="rdo" value="1" checked>男</label>
@@ -49,8 +49,8 @@
                         <div id = req>※半角数字で記入してください</div><br>
                     </div>
                     <div class = "mail">
-                        <input type="textbox" name="mail_1" style="background-color:#EFEEF0;" placeholder="sanma0000" > @
-                        <input type="textbox" name="mail_2" style="background-color:#EFEEF0;" placeholder="sasasa.co.jp"  size="12">
+                        <input type="textbox" name="mail_1" style="background-color:#EFEEF0;" placeholder="sanma0000" required> @
+                        <input type="textbox" name="mail_2" style="background-color:#EFEEF0;" placeholder="sasasa.co.jp"  size="12" required>
                         <div id = req>※半角英数字及び記号で記入してください</div><br>
                     </div>
                     <div class = "where">
@@ -69,7 +69,7 @@
                         </select><br>
                     </div>
                 <div class = "value">
-                    <textarea cols="55" rows="10" name="area" style="background-color:#EFEEF0;" placeholder="ご意見・ご感想など"  wrap="hard"></textarea>
+                    <textarea cols="55" rows="10" name="area" style="background-color:#EFEEF0;" placeholder="ご意見・ご感想など"  wrap="hard" required></textarea>
                 </div>
             </div>
             <div id=s_btn>
@@ -78,9 +78,4 @@
         </div>
     </form>
 </body>
-<?php
-if($_POST["name1"] == ""){
-    echo "未記入です";
-}
- ?>
 </html>
