@@ -62,9 +62,9 @@
                     <div class = "select">
                         <select name="question" style="background-color:#EFEEF0;">
                             <option value="0">選択してね</option>
-                            <option value="1">商品について</option>
-                            <option value="2">サービスについて</option>
-                            <option value="3">イベントについて</option>
+                            <option value="1">怪我について</option>
+                            <option value="2">貸し出しサービスについて</option>
+                            <option value="3">海の家について</option>
                             <option value="4">その他</option>
                         </select><br>
                     </div>
