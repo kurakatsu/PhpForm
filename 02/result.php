@@ -1,7 +1,7 @@
 <?php
 session_start();
  ?>
- 
+
 <!DOCTYPE html>
 <html lang="ja">
 <head>
@@ -82,7 +82,7 @@ session_start();
                 ?>
                 <li>
                     <?php
-                    $select_a = array("0" => "未選択です", "1" => "商品について", "2" => "サービスについて", "3" => "イベントについて", "4" => "その他");
+                    $select_a = array("0" => "未選択です", "1" => "授業について", "2" => "給食について", "3" => "登下校について", "4" => "その他");
                     echo "質問カテゴリ<br>". $select_a[$_SESSION["question"]]. "<br>";
                 ?>
                 </li>
@@ -136,6 +136,9 @@ session_start();
         $current .= "質問カテゴリ\n". $select_a[$_SESSION["question"]]. "\n";
         $current .= "質問内容\n". htmlspecialchars($_SESSION["area"], ENT_QUOTES). "\n\n";
         file_put_contents($filename, $current);
+        //SESSIONの初期化
+        $_SESSION = array();
+        session_destroy();
      ?>
 </body>
 </html>

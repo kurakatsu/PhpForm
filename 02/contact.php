@@ -1,6 +1,7 @@
 <?php
 session_start();
 $flag = 1;
+$mailf = 1;
 if(count($_POST) != 0){
     if($_POST["name1"] == ""){
         $flag = 0;
@@ -9,7 +10,7 @@ if(count($_POST) != 0){
         $flag = 0;
     }
     if($_POST["mail_1"] == ""){
-        $flag = 0;
+        $mailf = 0;
     }
     if($_POST["mail_1"] == ""){
         $flag = 0;
@@ -17,7 +18,7 @@ if(count($_POST) != 0){
     if($_POST["area"] == ""){
         $flag = 0;
     }
-    if($flag != 0){
+    if($flag != 0 && $mailf != 0){
     $_SESSION["name1"] = $_POST["name1"];
     $_SESSION["name2"] = $_POST["name2"];
     $_SESSION["mail_1"] = $_POST["mail_1"];
@@ -30,6 +31,11 @@ if(count($_POST) != 0){
     $_SESSION["num1"] = $_POST["num1"];
     $_SESSION["num2"] = $_POST["num2"];
     $_SESSION["num3"] = $_POST["num3"];
+    if(isset($_SESSION)){
+        foreach($_POST["chk"] as $key => $value){
+            $_SESSION["chk"][$key] = $value;
+        }
+    }
     $_SESSION["chk[]"] = $_POST["chk[]"];
     $_SESSION["question"] = $_POST["question"];
     $_SESSION["area"] = $_POST["area"];
@@ -47,7 +53,7 @@ if(count($_POST) != 0){
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <h1>お問い合わせフォーム</h1>
+    <h1><img src="otoi.png" width="400"alt="" /></h1>
     <form action="contact.php" autocomplete="off" method="POST">
         <div class = "clearfix" id= page>
             <div id = main>
@@ -108,7 +114,12 @@ if(count($_POST) != 0){
                                         echo "<span class='blank'>※未記入です</span>";
                                     }
                                  ?><br>
-                        名: <input type="textbox" name="name2" style="background-color:#EFEEF0;" placeholder="太郎"><br>
+                        名: <input type="textbox" name="name2" style="background-color:#EFEEF0;" placeholder="太郎">
+                        <?php
+                            if($flag == 0){
+                                echo "<span class='blank'>※未記入です</span>";
+                            }
+                         ?><br>
                     </div>
                     <div class = "rdo">
                         <label><input type="radio" name="rdo" value="1" checked>男</label>
@@ -132,12 +143,17 @@ if(count($_POST) != 0){
                         <input type="textbox" name="num1" maxlength="4" style="background-color:#EFEEF0;" placeholder="123" size="3" pattern="^[0-9]+$"> -
                         <input type="textbox" name="num2" maxlength="4" style="background-color:#EFEEF0;" placeholder="9999" size="3" pattern="^[0-9]+$"> -
                         <input type="textbox" name="num3" maxlength="4" style="background-color:#EFEEF0;" placeholder="9999" size="3" pattern="^[0-9]+$">
-                        <div id = 'req'>※半角数字で記入してください</div><br>
+                        <div class = 'req'>※半角数字で記入してください</div><br>
                     </div>
                     <div class = "mail">
-                        <input type="textbox" name="mail_1" style="background-color:#EFEEF0;" placeholder="sanma0000" > @
+                        <input type="textbox" name="mail_1" style="background-color:#EFEEF0;" placeholder="sanma0000" > <span class='at'>@</span>
                         <input type="textbox" name="mail_2" style="background-color:#EFEEF0;" placeholder="sasasa.co.jp"  size="12" >
-                        <div id = 'req'>※半角英数字及び記号で記入してください</div><br>
+                        <?php
+                            if($flag == 0 || $mailf == 0){
+                                echo "<span class='blank'>※未記入です</span>";
+                            }
+                         ?>
+                        <div class = 'req'>※半角英数字及び記号で記入してください</div><br>
                     </div>
                     <div class = "where">
                         <label><input type="checkbox" name="chk[]" value="1">雑誌</label>
@@ -148,14 +164,19 @@ if(count($_POST) != 0){
                     <div class = "select">
                         <select name="question" style="background-color:#EFEEF0;">
                             <option value="0">選択してね</option>
-                            <option value="1">怪我について</option>
-                            <option value="2">貸し出しサービスについて</option>
-                            <option value="3">海の家について</option>
+                            <option value="1">授業について</option>
+                            <option value="2">給食について</option>
+                            <option value="3">登下校について</option>
                             <option value="4">その他</option>
                         </select><br>
                     </div>
                 <div class = "value">
                     <textarea cols="55" rows="10" name="area" style="background-color:#EFEEF0;" placeholder="ご意見・ご感想など"  wrap="hard" ></textarea>
+                    <?php
+                        if($flag == 0){
+                            echo "<br><span class='blank'>※未記入です</span>";
+                        }
+                     ?>
                 </div>
             </div>
             <div id=s_btn>
