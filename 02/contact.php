@@ -10,14 +10,54 @@
     <form action="result.php" method="POST" >
         <div class = "clearfix" id= page>
             <div id = main>
-                <div class = "name"><div id="item">お名前<div id = req>（必須）</div></div></div>
-                <div class = "rdo"><div id="item">性別<div id = any>（任意）</div></div></div>
-                <div class = "add"><div id="item">住所<div id = any>（任意）</div></div></div>
-                <div class = "number"><div id="item">電話番号<div id = any>（任意）</div></div></div>
-                <div class = "mail"><div id="item">メールアドレス<div id = req>（必須）</div></div></div>
-                <div class = "where"><div id="item">どこで知りましたか？<div id = any>（任意）</div></div></div>
-                <div class = "select"><div id="item">質問カテゴリ選択<div id = any>（任意）</div></div></div>
-                <div class = "value"><div id="item">質問内容<div id = req>（必須）</div></div></div>
+                <div class = "name">
+                    <div class="item">お名前
+                        <div class = req>（必須）
+                        </div>
+                    </div>
+                </div>
+                <div class = "rdo">
+                    <div class="item">性別
+                        <div class = any>（任意）
+                        </div>
+                    </div>
+                </div>
+                <div class = "add">
+                    <div class="item">住所
+                        <div class = any>（任意）
+                        </div>
+                    </div>
+                </div>
+                <div class = "number">
+                    <div class="item">電話番号
+                        <div class = any>（任意）
+                        </div>
+                    </div>
+                </div>
+                <div class = "mail">
+                    <div class="item">メールアドレス
+                        <div class = req>（必須）
+                        </div>
+                    </div>
+                </div>
+                <div class = "where">
+                    <div class="item">どこで知りましたか？
+                        <div class = any>（任意）
+                        </div>
+                    </div>
+                </div>
+                <div class = "select">
+                    <div class="item">質問カテゴリ選択
+                        <div class = any>（任意）
+                        </div>
+                    </div>
+                </div>
+                <div class = "value">
+                    <div class="item">質問内容
+                        <div class = req>（必須）
+                        </div>
+                    </div>
+                </div>
             </div>
             <div id = sub>
                     <div class = "name">

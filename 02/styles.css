@@ -10,33 +10,25 @@
     width: 280px;
     float: left;
     text-align: center;
-    text-shadow: 1px 1px 1px #000000;
+    text-shadow: 2px 2px 2px #000000;
 }
 #sub {
     color: #EFEEF0;
     width: 550px;
     float: right;
-    text-shadow: 1px 1px 1px #000000;
+    text-shadow: 2px 2px 2px #000000;
 }
 .clearfix:after {
     content: " ";
     display: block;
     clear: both;
-    /*visibility: hidden;
-    height: 0;*/
 }
-/**html .clearfix {height: 1%;}
-.clearfix {display: block;}*/
-
 body {
     margin: 0 auto;
     width: 850px;
-    /*background: linear-gradient(#13D1A6, #94F080, #13D1A6);*/
     background-image: url("sea.jpg");
     /*coverでページにおさめる*/
     background-size: cover;
-    /*background-color: rgba(19,209,166,0.5);*/
-    background-color: rgba(49,50,55,1);
 }
 h1 {
     color:#EFEEF0;
@@ -45,7 +37,7 @@ h1 {
     font-size: 60px;
     opacity: 0.7;
 }
-#item {
+.item {
     color: #EFEEF0;
     margin: 10px;
     font-size: 1.7em;
@@ -78,7 +70,8 @@ h1 {
     width: 300px;
     line-height: 2em;
     /*文字を左寄せにする*/
-    margin-left: 20px;
+    text-align: left;
+    margin-left: 30px;
 }
 .number {
     margin-top: 10px;
@@ -111,13 +104,6 @@ h1 {
 textarea {
     resize: none;
 }
-p {
-    padding-top: 10px;
-    margin: 50px auto;
-    width: 125px;
-    height: 50px;
-    float: none;
-}
 input#submit_btn {
     width: 125px;
     height: 50px;
@@ -138,13 +124,13 @@ input#submit_btn {
     background-color: #313237;
     color: #EFEEF0;
 }
-#req {
+.req {
     font-size: 20px;
     color: #FF4C4C;
     text-shadow: 1.5px 1.5px 1.5px #000000;
     /*#ED0605*/
 }
-#any {
+.any {
     font-size: 20px;
     color: #4CFF4C;
     text-shadow: 1.5px 1.5px 1.5px #000000;
