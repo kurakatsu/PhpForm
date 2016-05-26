@@ -1,3 +1,44 @@
+<?php
+session_start();
+$flag = 1;
+if(count($_POST) != 0){
+    if($_POST["name1"] == ""){
+        $flag = 0;
+    }
+    if($_POST["name2"] == ""){
+        $flag = 0;
+    }
+    if($_POST["mail_1"] == ""){
+        $flag = 0;
+    }
+    if($_POST["mail_1"] == ""){
+        $flag = 0;
+    }
+    if($_POST["area"] == ""){
+        $flag = 0;
+    }
+    if($flag != 0){
+    $_SESSION["name1"] = $_POST["name1"];
+    $_SESSION["name2"] = $_POST["name2"];
+    $_SESSION["mail_1"] = $_POST["mail_1"];
+    $_SESSION["mail_2"] = $_POST["mail_2"];
+    $_SESSION["rdo"] = $_POST["rdo"];
+    $_SESSION["y_num1"] = $_POST["y_num1"];
+    $_SESSION["y_num2"] = $_POST["y_num2"];
+    $_SESSION["address1"] = $_POST["address1"];
+    $_SESSION["address2"] = $_POST["address2"];
+    $_SESSION["num1"] = $_POST["num1"];
+    $_SESSION["num2"] = $_POST["num2"];
+    $_SESSION["num3"] = $_POST["num3"];
+    $_SESSION["chk[]"] = $_POST["chk[]"];
+    $_SESSION["question"] = $_POST["question"];
+    $_SESSION["area"] = $_POST["area"];
+    header('location: result.php');
+    exit();
+}
+}
+?>
+
 <!DOCTYPE html>
 <html lang="ja">
 <head>
@@ -7,62 +48,67 @@
 </head>
 <body>
     <h1>お問い合わせフォーム</h1>
-    <form action="result.php" method="POST" >
+    <form action="contact.php" autocomplete="off" method="POST">
         <div class = "clearfix" id= page>
             <div id = main>
                 <div class = "name">
                     <div class="item">お名前
-                        <div class = req>（必須）
+                        <div class = 'req'>（必須）
                         </div>
                     </div>
                 </div>
                 <div class = "rdo">
                     <div class="item">性別
-                        <div class = any>（任意）
+                        <div class = 'any'>（任意）
                         </div>
                     </div>
                 </div>
                 <div class = "add">
                     <div class="item">住所
-                        <div class = any>（任意）
+                        <div class = 'any'>（任意）
                         </div>
                     </div>
                 </div>
                 <div class = "number">
                     <div class="item">電話番号
-                        <div class = any>（任意）
+                        <div class = 'any'>（任意）
                         </div>
                     </div>
                 </div>
                 <div class = "mail">
                     <div class="item">メールアドレス
-                        <div class = req>（必須）
+                        <div class = 'req'>（必須）
                         </div>
                     </div>
                 </div>
                 <div class = "where">
                     <div class="item">どこで知りましたか？
-                        <div class = any>（任意）
+                        <div class = 'any'>（任意）
                         </div>
                     </div>
                 </div>
                 <div class = "select">
                     <div class="item">質問カテゴリ選択
-                        <div class = any>（任意）
+                        <div class = 'any'>（任意）
                         </div>
                     </div>
                 </div>
                 <div class = "value">
                     <div class="item">質問内容
-                        <div class = req>（必須）
+                        <div class = 'req'>（必須）
                         </div>
                     </div>
                 </div>
             </div>
             <div id = sub>
                     <div class = "name">
-                        姓: <input type="textbox" name="name1" style="background-color:#EFEEF0;" placeholder="田中" required><br>
-                        名: <input type="textbox" name="name2" style="background-color:#EFEEF0;" placeholder="太郎" required><br>
+                        姓: <input type="textbox" name="name1" style="background-color:#EFEEF0;" placeholder="田中">
+                                <?php
+                                    if($flag == 0){
+                                        echo "<span class='blank'>※未記入です</span>";
+                                    }
+                                 ?><br>
+                        名: <input type="textbox" name="name2" style="background-color:#EFEEF0;" placeholder="太郎"><br>
                     </div>
                     <div class = "rdo">
                         <label><input type="radio" name="rdo" value="1" checked>男</label>
@@ -86,12 +132,12 @@
                         <input type="textbox" name="num1" maxlength="4" style="background-color:#EFEEF0;" placeholder="123" size="3" pattern="^[0-9]+$"> -
                         <input type="textbox" name="num2" maxlength="4" style="background-color:#EFEEF0;" placeholder="9999" size="3" pattern="^[0-9]+$"> -
                         <input type="textbox" name="num3" maxlength="4" style="background-color:#EFEEF0;" placeholder="9999" size="3" pattern="^[0-9]+$">
-                        <div id = req>※半角数字で記入してください</div><br>
+                        <div id = 'req'>※半角数字で記入してください</div><br>
                     </div>
                     <div class = "mail">
-                        <input type="textbox" name="mail_1" style="background-color:#EFEEF0;" placeholder="sanma0000" required> @
-                        <input type="textbox" name="mail_2" style="background-color:#EFEEF0;" placeholder="sasasa.co.jp"  size="12" required>
-                        <div id = req>※半角英数字及び記号で記入してください</div><br>
+                        <input type="textbox" name="mail_1" style="background-color:#EFEEF0;" placeholder="sanma0000" > @
+                        <input type="textbox" name="mail_2" style="background-color:#EFEEF0;" placeholder="sasasa.co.jp"  size="12" >
+                        <div id = 'req'>※半角英数字及び記号で記入してください</div><br>
                     </div>
                     <div class = "where">
                         <label><input type="checkbox" name="chk[]" value="1">雑誌</label>
@@ -109,7 +155,7 @@
                         </select><br>
                     </div>
                 <div class = "value">
-                    <textarea cols="55" rows="10" name="area" style="background-color:#EFEEF0;" placeholder="ご意見・ご感想など"  wrap="hard" required></textarea>
+                    <textarea cols="55" rows="10" name="area" style="background-color:#EFEEF0;" placeholder="ご意見・ご感想など"  wrap="hard" ></textarea>
                 </div>
             </div>
             <div id=s_btn>
