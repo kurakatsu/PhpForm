@@ -12,7 +12,7 @@ if(count($_POST) != 0){
     if($_POST["mail_1"] == ""){
         $mailf = 0;
     }
-    if($_POST["mail_1"] == ""){
+    if($_POST["mail_2"] == ""){
         $flag = 0;
     }
     if($_POST["area"] == ""){
@@ -156,9 +156,9 @@ if(count($_POST) != 0){
                         <div class = 'req'>※半角英数字及び記号で記入してください</div><br>
                     </div>
                     <div class = "where">
-                        <label><input type="checkbox" name="chk[]" value="1">雑誌</label>
-                        <label><input type="checkbox" name="chk[]" value="2">Web</label>
-                        <label><input type="checkbox" name="chk[]" value="3">友人</label>
+                        <label><input type="checkbox" name="chk[]" value="1">配布物</label>
+                        <label><input type="checkbox" name="chk[]" value="2">連絡網</label>
+                        <label><input type="checkbox" name="chk[]" value="3">子供</label>
                         <label><input type="checkbox" name="chk[]" value="4">その他</label><br>
                     </div>
                     <div class = "select">

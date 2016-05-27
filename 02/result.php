@@ -67,7 +67,7 @@ session_start();
                 </li>
                 <?php
                     $count = 0;
-                    $check_a = array("1" => "雑誌", "2" => "Web", "3" => "友人", "4" => "その他");
+                    $check_a = array("1" => "配布物", "2" => "連絡網", "3" => "子供", "4" => "その他");
                     if(isset($_SESSION["chk"]) == false){
                         echo "未選択です";
                     }else{
@@ -99,7 +99,7 @@ session_start();
                     if($_SESSION["area"] == "" || preg_match("/^[\s　]+$/", $_SESSION["area"])){
                         echo "記入内容がありません";
                     }else{
-                        echo nl2br(htmlspecialchars($_SESSION["area"], ENT_QUOTES));
+                        echo htmlspecialchars($_SESSION["area"], ENT_QUOTES);
                         //さらに、, に続けて ENT_QUOTES と書くと、' （シングルクォート）も &#039; に変換されて返されます。
                         //この処理は、訪問者から送信されたデータを表示する際には必ず行うようにしてください。もしこの処理を忘れると、フォームから送信する際に入力されたHTMLやJavaScriptをそのまま解釈してしまいます。
                         //もし悪意あるJavaScriptが埋め込まれると訪問者全員に影響を与えてしまうため、それを防ぐためにも htmlspecialchars で安全な文字列に変換します。

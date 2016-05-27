@@ -1,5 +1,6 @@
 body {
     margin: 0 auto;
+    margin-top: 30px;
     width: 850px;
     /*background: linear-gradient(#13D1A6, #94F080, #13D1A6);*/
     background-image: url("blackboard.jpg");
@@ -8,7 +9,7 @@ body {
     background-color: rgba(49,50,55,1);
 }
 #word {
-    margin: 50px auto;
+    margin: 0 auto;
     width: 850px;
     border: solid 1px #6E6F70;
     background-color: rgba(110,111,112,0.5);;
@@ -24,7 +25,7 @@ h1 {
 #word2 {
     color: #EAFFDA;
     margin-left: 55px;
-    line-height: 2em;
+    line-height: 1.4em;
     font-size: 1.5em;
 }
 li {
@@ -34,7 +35,7 @@ li {
 #box {
     font-size: 1.25em;
     margin-left: 130px;
-    margin-bottom: 50px;
+    margin-bottom: 30px;
     color: #EAFFDA;
     border:2px solid;
     height: 150px;
