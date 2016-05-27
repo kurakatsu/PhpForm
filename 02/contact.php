@@ -1,6 +1,7 @@
 <?php
 session_start();
-$flag = array('name1' => '1', 'name2' => '1', 'num' => '1', 'mail' => '1', 'area' => '1',);
+$flag = array('name1' => '1', 'name2' => '1', 'num' => '1', 'mail' => '1', 'area' => '1');
+$value_array = array('name1' => "", 'name2' => "", 'num' => "", 'mail' => "", 'area' => "");
 $num_req = "";
 $name1_req = "";
 $name2_req = "";
@@ -17,10 +18,16 @@ if(count($_POST) != 0){
     if($_POST["name1"] == "" ){
         $name1_req = "※未入力です";
         $flag['name1'] = 0;
+        $value_array['name1'] = "";
+    }else{
+        $value_array['name1'] = $_POST['name1'];
     }
     if($_POST["name2"] == ""){
         $name2_req = "※未入力です";
         $flag['name2'] = 0;
+        $value_array['name2'] = "";
+    }else{
+        $value_array['name2'] = $_POST['name2'];
     }
     if($_POST["mail_1"] == "" || $_POST["mail_2"] == ""){
         $mail_req = "※未入力です";
@@ -118,13 +125,13 @@ if(count($_POST) != 0){
             </div>
             <div id = sub>
                     <div class = "name">
-                        姓: <input type="textbox" name="name1" style="background-color:#EFEEF0" placeholder="田中">
+                        姓: <input type="textbox" name="name1" style="background-color:#EFEEF0" placeholder="田中" value="<?php echo $value_array['name1']; ?>">
                                 <?php
                                     if($flag['name1'] == 0){
                                         echo "<span　class='blank'>". $name1_req. "</span>";
                                     }
                                  ?><br>
-                        名: <input type="textbox" name="name2" style="background-color:#EFEEF0" placeholder="太郎">
+                        名: <input type="textbox" name="name2" style="background-color:#EFEEF0" placeholder="太郎" value="<?php echo $value_array['name2']; ?>">
                             <?php
                                 if($flag['name2'] == 0){
                                     echo "<span　class='blank'>". $name2_req. "</span>";
