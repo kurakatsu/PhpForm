@@ -140,5 +140,8 @@ session_start();
         $_SESSION = array();
         session_destroy();
      ?>
+     <form action="contact.php">
+         <input type="submit" value="戻る">
+    </form>
 </body>
 </html>
