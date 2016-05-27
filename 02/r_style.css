@@ -48,3 +48,6 @@ li {
     color: #EFEEF0;
     line-height: 1.1em;
 }
+form {
+    height: 25px;
+}

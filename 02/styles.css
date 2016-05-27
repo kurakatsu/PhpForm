@@ -146,3 +146,6 @@ input#submit_btn {
   .at {
     font-size: 18px;
 }
+input, textarea, select{
+    background-color: #EFEEF0;
+}

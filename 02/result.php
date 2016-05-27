@@ -137,8 +137,9 @@ session_start();
         $current .= "質問内容\n". htmlspecialchars($_SESSION["area"], ENT_QUOTES). "\n\n";
         file_put_contents($filename, $current);
         //SESSIONの初期化
-        $_SESSION = array();
-        session_destroy();
+        //$_SESSION = array();
+        //session_destroy();
      ?>
+         <a href="contact.php"><input type="button" value="戻る"></a>
 </body>
 </html>
