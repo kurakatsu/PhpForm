@@ -1,7 +1,7 @@
 <?php
 session_start();
 $flag = array('name1' => '1', 'name2' => '1', 'num' => '1', 'mail' => '1', 'area' => '1');
-$value_array = array('name1' => "", 'name2' => "", 'num' => "", 'mail' => "", 'area' => "");
+$value_array = array('name1' => "", 'name2' => "", 'num1' => "", 'num2' => "", 'num3' => "", 'mail_1' => "", 'mail_2' => "", 'area' => "");
 $num_req = "";
 $name1_req = "";
 $name2_req = "";
@@ -14,6 +14,10 @@ if(count($_POST) != 0){
     }elseif(!preg_match('/^[0-9]+$/', $_POST["num1"]) || !preg_match('/^[0-9]+$/', $_POST["num2"]) || !preg_match('/^[0-9]+$/', $_POST["num3"])){
         $num_req = "※半角数字ではありません";
         $flag['num'] = 0;
+    }else{
+        $value_array['num1'] = $_POST['num1'];
+        $value_array['num2'] = $_POST['num2'];
+        $value_array['num3'] = $_POST['num3'];
     }
     if($_POST["name1"] == "" ){
         $name1_req = "※未入力です";
@@ -32,10 +36,17 @@ if(count($_POST) != 0){
     if($_POST["mail_1"] == "" || $_POST["mail_2"] == ""){
         $mail_req = "※未入力です";
         $flag['mail'] = 0;
+        $value_array['mail'] = "";
+    }else{
+        $value_array['mail_1'] = $_POST['mail_1'];
+        $value_array['mail_2'] = $_POST['mail_2'];
     }
     if($_POST["area"] == ""){
         $area_req = "※未入力です";
         $flag['area'] = 0;
+        $value_array['area'] = "";
+    }else{
+        $value_array['area'] = $_POST['area'];
     }
     if(min($flag) != 0){
     $_SESSION["name1"] = $_POST["name1"];
@@ -157,9 +168,9 @@ if(count($_POST) != 0){
                         </div>
                     </div>
                     <div class = "number">
-                        <input type="textbox" name="num1" maxlength="4" style="background-color:#EFEEF0" placeholder="123" size="3" > -
-                        <input type="textbox" name="num2" maxlength="4" style="background-color:#EFEEF0" placeholder="9999" size="3" > -
-                        <input type="textbox" name="num3" maxlength="4" style="background-color:#EFEEF0" placeholder="9999" size="3" >
+                        <input type="textbox" name="num1" maxlength="4" style="background-color:#EFEEF0" placeholder="123" size="3" value="<?php echo $value_array['num1']; ?>"> -
+                        <input type="textbox" name="num2" maxlength="4" style="background-color:#EFEEF0" placeholder="9999" size="3" value="<?php echo $value_array['num2']; ?>"> -
+                        <input type="textbox" name="num3" maxlength="4" style="background-color:#EFEEF0" placeholder="9999" size="3" value="<?php echo $value_array['num3']; ?>">
                         <?php
                         if($flag['num'] == 0){
                             echo "<span　class='blank'>". $num_req. "</span>";
@@ -168,8 +179,9 @@ if(count($_POST) != 0){
                         <div class = 'req'>※半角数字で記入してください</div><br>
                     </div>
                     <div class = "mail">
-                        <input type="textbox" name="mail_1" style="background-color:#EFEEF0" placeholder="sanma0000" > <span class='at'>@</span>
-                        <input type="textbox" name="mail_2" style="background-color:#EFEEF0" placeholder="sasasa.co.jp"  size="12" >
+                        <input type="textbox" name="mail_1" style="background-color:#EFEEF0" placeholder="sanma0000" value="<?php echo $value_array['mail_1']; ?>">
+                        <span class='at'>@</span>
+                        <input type="textbox" name="mail_2" style="background-color:#EFEEF0" placeholder="sasasa.co.jp"  size="12" value="<?php echo $value_array['mail_2']; ?>">
                         <?php
                             if($flag['mail'] == 0){
                                 echo "<span　class='blank'>". $mail_req. "</span>";
@@ -193,10 +205,10 @@ if(count($_POST) != 0){
                         </select><br>
                     </div>
                 <div class = "value">
-                    <textarea cols="55" rows="10" name="area" style="background-color:#EFEEF0" placeholder="ご意見・ご感想など"  wrap="hard" ></textarea>
+                    <textarea cols="55" rows="10" name="area" style="background-color:#EFEEF0" placeholder="ご意見・ご感想など"  wrap="hard"><?php echo $value_array['area']; ?></textarea>
                     <?php
                         if($flag['area'] == 0){
-                            echo "<br><span　class='blank'>". $area_req. "</span>";
+                            echo "<span　class='blank'>". $area_req. "</span>";
                         }
                      ?>
                 </div>
